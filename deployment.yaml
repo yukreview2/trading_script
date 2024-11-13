@@ -10,8 +10,8 @@ services:
       storage:
         size: 1Gi
     env:
-      TELEGRAM_BOT_TOKEN: "YOUR_TELEGRAM_BOT_TOKEN"
-      TELEGRAM_CHAT_ID: "YOUR_TELEGRAM_CHAT_ID"
+      TELEGRAM_TOKEN = '7652372718:AAGJy92PsoSyOvh8p5tDoOzKtnd0ShuIj3g'
+      CHAT_ID = '5523100058'
 profiles:
   compute:
     trading-profile:
