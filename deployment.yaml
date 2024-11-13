@@ -1,0 +1,31 @@
+version: v2
+services:
+  trading-service:
+    image: your-dockerhub-username/trading-script:latest  # Ganti dengan nama image Docker Anda
+    expose:
+      - port: 80
+    resources:
+      cpu: 0.5
+      memory: 1Gi
+      storage:
+        size: 1Gi
+    env:
+      TELEGRAM_BOT_TOKEN: "YOUR_TELEGRAM_BOT_TOKEN"
+      TELEGRAM_CHAT_ID: "YOUR_TELEGRAM_CHAT_ID"
+profiles:
+  compute:
+    trading-profile:
+      resources:
+        cpu: 0.5
+        memory: 1Gi
+        storage: 1Gi
+  placement:
+    akash-region:
+      attributes:
+        host: akash
+deployment:
+  trading-deployment:
+    profile:
+      compute: trading-profile
+      placement: akash-region
+    count: 1
